@@ -15,14 +15,7 @@ await testFirebase();
 final db = FirebaseFirestore.instance;
 
 Future<void> testFirebase() async {
-  // try {
-  //   // Attempt to read users collection
-  //   await FirebaseFirestore.instance.collection('Users').get();
-  //   print("Firestore is connected!");
-  // } catch (e) {
-  //   print("Firestore connection failed: $e");
-  // }
-
+  
   //print some data
 final docRef = db.collection("Users").doc("Gw0v2ReXHqI1NaTuLTFl");
 docRef.get().then(
@@ -33,10 +26,7 @@ docRef.get().then(
      },
   onError: (e) => print("Error getting document: $e"),
 );
-
 }
-
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
