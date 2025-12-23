@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 import 'firebase_options.dart';
 import 'package:rubi_app/screens/menu.dart';
 
@@ -10,25 +10,25 @@ void main() async {
   await Firebase.initializeApp(
   options: DefaultFirebaseOptions.currentPlatform,
 );
-await testFirebase();
+// await testFirebase();
   runApp(const App());
 }
 
-final db = FirebaseFirestore.instance; 
+// final db = FirebaseFirestore.instance; 
 
-Future<void> testFirebase() async {
+// Future<void> testFirebase() async {
   
-  //print some data
-final docRef = db.collection("Users").doc("Gw0v2ReXHqI1NaTuLTFl");
-docRef.get().then(
-  (DocumentSnapshot doc) {
-    final data = doc.data() as Map<String, dynamic>;
-    print("Firestore is connected!");
-    print(data);
-     },
-  onError: (e) => print("Error getting document: $e"),
-);
-}
+//   //print some data
+// final docRef = db.collection("Users").doc("Gw0v2ReXHqI1NaTuLTFl");
+// docRef.get().then(
+//   (DocumentSnapshot doc) {
+//     final data = doc.data() as Map<String, dynamic>;
+//     print("Firestore is connected!");
+//     print(data);
+//      },
+//   onError: (e) => print("Error getting document: $e"),
+// );
+// }
 
 class App extends StatelessWidget {
   const App({super.key});
