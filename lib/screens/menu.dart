@@ -22,8 +22,15 @@ class MenuScreen extends StatelessWidget {
         // actions: <Widget>[Button(icon: const Icon(Icons.add_alert))],
       ),
       body: 
-      
-  
+  //     StreamBuilder<QuerySnapshot>(
+  // stream: FirebaseFirestore.instance.collection("Items").snapshots(),
+  // builder: (context, snapshot) {
+  //   if (snapshot.hasError) return const Center(child: Text("Error loading cakes"));
+  //   if (snapshot.connectionState == ConnectionState.waiting) {
+  //     return const Center(child: CircularProgressIndicator());
+  //   }
+    
+
       GridView.count(
         crossAxisCount: 2,
         crossAxisSpacing: 10, // Spacing between columns
@@ -33,6 +40,6 @@ class MenuScreen extends StatelessWidget {
           return const Center(child: ProductCard());
         }),
       ),
-    );
+      );
   }
 }
