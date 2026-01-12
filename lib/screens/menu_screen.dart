@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:rubi_app/widgets/product_card.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:rubi_app/models/product_data.dart';
+import 'package:rubi_app/widgets/menu_grid.dart';
+import 'package:provider/provider.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
@@ -21,6 +24,7 @@ class MenuScreen extends StatelessWidget {
         // title: const Text('Rubi Pasteleria Menu'),
         // actions: <Widget>[Button(icon: const Icon(Icons.add_alert))],
       ),
+<<<<<<< HEAD:lib/screens/menu.dart
       body: 
   //     StreamBuilder<QuerySnapshot>(
   // stream: FirebaseFirestore.instance.collection("Items").snapshots(),
@@ -41,5 +45,17 @@ class MenuScreen extends StatelessWidget {
         }),
       ),
       );
+=======
+      body: MenuGrid(),
+    );
+    // body: GridView.count(
+    //   crossAxisCount: 2,
+    //   crossAxisSpacing: 10, // Spacing between columns
+    //   mainAxisSpacing: 10, // Spacing between rows
+    //   childAspectRatio: 0.5, // <--- Adjust this to increase height
+    //   children: List.generate(2, (index) {
+    //     return const Center(child: ProductCard());
+    //   }),
+>>>>>>> origin/main:lib/screens/menu_screen.dart
   }
 }

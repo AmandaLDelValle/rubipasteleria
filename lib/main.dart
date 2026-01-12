@@ -2,22 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
 import 'firebase_options.dart';
-import 'package:rubi_app/screens/menu.dart';
-
+import 'package:rubi_app/screens/menu_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart'; // Import the package
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-  options: DefaultFirebaseOptions.currentPlatform,
-);
-// await testFirebase();
-  runApp(const App());
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // await testFirebase();
+  runApp(const ProviderScope(child: App()));
 }
 
-// final db = FirebaseFirestore.instance; 
+// final db = FirebaseFirestore.instance;
 
 // Future<void> testFirebase() async {
-  
+
 //   //print some data
 // final docRef = db.collection("Users").doc("Gw0v2ReXHqI1NaTuLTFl");
 // docRef.get().then(
@@ -37,9 +35,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.pink),
-      ),
+      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.pink)),
+
       home: const MenuScreen(),
     );
   }
