@@ -8,15 +8,44 @@ class MenuGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Product> productsList = getProducts();
 
-    return ListView.builder(
-      itemCount: productsList.length,
-      itemBuilder: (context, index) {
+    return GridView.count(
+      crossAxisCount: 2,
+      crossAxisSpacing: 10, // Spacing between columns
+      mainAxisSpacing: 10, // Spacing between rows
+      childAspectRatio: 0.5, // <--- Adjust this to increase height
+      children: List.generate(productsList.length, (index) {
         final product = productsList[index];
         return ProductCard(
-          name: product.productName, //product_card : menu_grid.product_data
+          name: product.productName,
           description: product.productDesc,
         );
-      },
+      }),
     );
+
+    // return ListView.builder(
+    //   itemCount: productsList.length,
+    //   itemBuilder: (context, index) {
+    //     final product = productsList[index];
+    //     return ProductCard(
+    //       name: product.productName, //product_card : menu_grid.product_data
+    //       description: product.productDesc,
+    //     );
+    //   },
+    // );
   }
 }
+
+    // body: GridView.builder(
+    //   crossAxisCount: 2,
+    //   crossAxisSpacing: 10, // Spacing between columns
+    //   mainAxisSpacing: 10, // Spacing between rows
+    //   childAspectRatio: 0.5, // <--- Adjust this to increase height
+    //   children: ListView.builder(
+    //   itemCount: productsList.length,
+    //   itemBuilder: (context, index) {
+    //     final product = productsList[index];
+    //     return ProductCard(
+    //       name: product.productName, //product_card : menu_grid.product_data
+    //       description: product.productDesc,
+    //     );
+    //   }),

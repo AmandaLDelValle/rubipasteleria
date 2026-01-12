@@ -24,38 +24,8 @@ class MenuScreen extends StatelessWidget {
         // title: const Text('Rubi Pasteleria Menu'),
         // actions: <Widget>[Button(icon: const Icon(Icons.add_alert))],
       ),
-<<<<<<< HEAD:lib/screens/menu.dart
-      body: 
-  //     StreamBuilder<QuerySnapshot>(
-  // stream: FirebaseFirestore.instance.collection("Items").snapshots(),
-  // builder: (context, snapshot) {
-  //   if (snapshot.hasError) return const Center(child: Text("Error loading cakes"));
-  //   if (snapshot.connectionState == ConnectionState.waiting) {
-  //     return const Center(child: CircularProgressIndicator());
-  //   }
-    
-
-      GridView.count(
-        crossAxisCount: 2,
-        crossAxisSpacing: 10, // Spacing between columns
-        mainAxisSpacing: 10, // Spacing between rows
-        childAspectRatio: 0.5, // <--- Adjust this to increase height
-        children: List.generate(100, (index) {
-          return const Center(child: ProductCard());
-        }),
-      ),
-      );
-=======
       body: MenuGrid(),
     );
-    // body: GridView.count(
-    //   crossAxisCount: 2,
-    //   crossAxisSpacing: 10, // Spacing between columns
-    //   mainAxisSpacing: 10, // Spacing between rows
-    //   childAspectRatio: 0.5, // <--- Adjust this to increase height
-    //   children: List.generate(2, (index) {
-    //     return const Center(child: ProductCard());
-    //   }),
->>>>>>> origin/main:lib/screens/menu_screen.dart
+
   }
 }
