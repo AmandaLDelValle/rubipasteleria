@@ -5,17 +5,77 @@ import 'package:rubi_app/models/product_data.dart';
 import 'package:provider/provider.dart';
 
 class ProductCard extends StatelessWidget {
+  final String image;
   final String name;
   final String description;
-  // const int cakePrice;
+  final int productPrice;
 
-  const ProductCard({super.key, required this.name, required this.description});
+  const ProductCard({
+    super.key,
+    required this.image,
+    required this.name,
+    required this.description,
+    required this.productPrice,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.white,
+      margin: const EdgeInsets.all(8),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      clipBehavior: Clip.antiAlias,
       child: Column(
-        children: [Text("Cake: $name"), Text("Description: $description")],
+        children: [
+          // Image.asset('assets/strawberry_cake.png', fit: BoxFit.cover),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Image.asset(image, fit: BoxFit.cover),
+                Text(name,
+                style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),),
+                Text(description,
+                style: const TextStyle(
+                    fontSize: 14,
+                  ),),
+                Text(
+                  "\$$productPrice",
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFFD81B60),
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(title: const Text('Boop!'));
+                      },
+                    );
+                  },
+                  child: const Text(
+                    'View Details',
+                    style: TextStyle(fontSize: 14),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

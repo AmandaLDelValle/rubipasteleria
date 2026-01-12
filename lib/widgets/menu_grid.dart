@@ -16,8 +16,10 @@ class MenuGrid extends StatelessWidget {
       children: List.generate(productsList.length, (index) {
         final product = productsList[index];
         return ProductCard(
+          image: product.image,
           name: product.productName,
           description: product.productDesc,
+          productPrice: product.productPrice,
         );
       }),
     );
