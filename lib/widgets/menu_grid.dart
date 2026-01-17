@@ -6,7 +6,7 @@ import 'package:rubi_app/models/product_data.dart';
 class MenuGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final List<Product> productsList = getProducts();
+    final: List<Product> productsList = getProducts();
 
     return GridView.count(
       crossAxisCount: 2,
